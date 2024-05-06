@@ -39,7 +39,7 @@ def test_search_records(finance_manager):
 
     results = finance_manager.search_records(amount=1000)
     assert len(results) == 1
-    assert results[0]['Описание'] == 'Test income'
+    assert results[0]['Категория'] == 'Доход'
 
     results = finance_manager.search_records(date='2024-05-03')
     assert len(results) == 1
