@@ -64,7 +64,7 @@ class FinanceManager:
 def main():
     finance_manager = FinanceManager('records.json')
 
-    def get_data():
+    def set_record():
         """Пользовательский ввод новой записи."""
         try:
             date = datetime.now().strftime('%Y-%m-%d')
@@ -104,7 +104,7 @@ def main():
 
         elif choice == '2':
             try:
-                data = get_data()
+                data = set_record()
                 finance_manager.add_record(*data)
                 print("Запись успешно добавлена")
                 input("Нажмите Enter для продолжения...")
