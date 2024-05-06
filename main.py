@@ -91,16 +91,19 @@ def main():
                 print("2. Вывод дохода")
                 print("3. Вывод расхода")
                 print("4. Возврат в главное меню")
-                subchoice = int(input("Выберите действие: ")) - 1
-                if 0 <= subchoice < 3:
-                    balance = finance_manager.calculate_balance(subchoice)
-                    action = ("баланс", "доход", "расход")
-                    print(f"Текущий {action[subchoice]}: {balance}")
-                    input("Нажмите Enter для продолжения...")
-                elif subchoice == 3:
-                    break
-                else:
-                    print("Неверный выбор. Попробуйте снова.")
+                try:
+                    subchoice = int(input("Выберите действие: ")) - 1
+                    if 0 <= subchoice < 3:
+                        balance = finance_manager.calculate_balance(subchoice)
+                        action = ("баланс", "доход", "расход")
+                        print(f"Текущий {action[subchoice]}: {balance}")
+                        input("Нажмите Enter для продолжения...")
+                    elif subchoice == 3:
+                        break
+                    else:
+                        print("Неверный выбор. Попробуйте снова.")
+                except ValueError:
+                    print("Выбор должен быть числом")
 
         elif choice == '2':
             try:
