@@ -55,6 +55,7 @@ class FinanceManager:
         return results
 
     def calculate_balance(self, index: int) -> float:
+        """Подсчет доходов, расходов, баланса."""
         income = sum(record['Сумма'] for record in self.records if record['Категория'] == 'Доход')
         expenses = sum(record['Сумма'] for record in self.records if record['Категория'] == 'Расход')
         balance = income - expenses
